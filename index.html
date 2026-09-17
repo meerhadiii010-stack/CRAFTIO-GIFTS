@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Craftio Gifts | Personalized Gifts</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #ffffff;
+      color: #111111;
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #ffffff;
+      border-bottom: 1px solid #eeeeee;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: #b08d35;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #111111;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #b08d35;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 88vh;
+      background: linear-gradient(120deg, #111111, #222222);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 70px 8%;
+      gap: 50px;
+    }
+
+    .hero-text {
+      max-width: 600px;
+    }
+
+    .hero small {
+      color: #d4af55;
+      letter-spacing: 4px;
+      font-weight: bold;
+    }
+
+    .hero h1 {
+      font-size: 64px;
+      line-height: 1.05;
+      margin: 15px 0;
+      letter-spacing: 2px;
+    }
+
+    .hero h1 span {
+      color: #d4af55;
+    }
+
+    .hero p {
+      color: #dddddd;
+      font-size: 18px;
+      margin-bottom: 30px;
+      max-width: 500px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 27px;
+      background: #d4af55;
+      color: #111111;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+      margin-right: 10px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: #ffffff;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: white;
+      border: 1px solid #d4af55;
+    }
+
+    /* HERO BOX */
+    .hero-box {
+      width: 390px;
+      height: 390px;
+      border: 1px solid #d4af55;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .hero-box-inner {
+      border: 1px solid #555555;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-box h2 {
+      font-size: 38px;
+      letter-spacing: 4px;
+    }
+
+    .hero-box p {
+      margin-top: 10px;
+      color: #cccccc;
+      font-size: 14px;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 80px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title small {
+      color: #b08d35;
+      letter-spacing: 3px;
+      font-weight: bold;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      margin-top: 8px;
+    }
+
+    /* PRODUCTS */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .product {
+      border: 1px solid #e5e5e5;
+      background: #ffffff;
+      transition: 0.3s;
+      overflow: hidden;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    }
+
+    .product-image {
+      height: 230px;
+      background: #eeeeee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #777777;
+      font-size: 15px;
+      text-align: center;
+    }
+
+    .product-content {
+      padding: 23px;
+    }
+
+    .product h3 {
+      margin-bottom: 8px;
+      font-size: 21px;
+    }
+
+    .product p {
+      color: #666666;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .product .btn {
+      padding: 10px 18px;
+      font-size: 13px;
+    }
+
+    /* ABOUT */
+    .about {
+      background: #111111;
+      color: white;
+      text-align: center;
+    }
+
+    .about-content {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .about h2 {
+      font-size: 38px;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      color: #cccccc;
+      font-size: 17px;
+    }
+
+    /* FEATURES */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      text-align: center;
+    }
+
+    .feature {
+      padding: 30px;
+      border: 1px solid #eeeeee;
+    }
+
+    .feature h3 {
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      color: #666666;
+      font-size: 14px;
+    }
+
+    /* CTA */
+    .cta {
+      background: #f7f7f7;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      color: #666666;
+      margin-bottom: 25px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0b0b0b;
+      color: white;
+      text-align: center;
+      padding: 45px 20px;
+    }
+
+    footer h2 {
+      letter-spacing: 3px;
+      margin-bottom: 8px;
+    }
+
+    footer h2 span {
+      color: #d4af55;
+    }
+
+    footer p {
+      color: #aaaaaa;
+      font-size: 14px;
+      margin: 7px 0;
+    }
+
+    .footer-links {
+      margin: 20px 0;
+    }
+
+    .footer-links a {
+      color: #dddddd;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      color: #d4af55;
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+
+      nav {
+        padding: 15px 5%;
+      }
+
+      nav ul {
+        gap: 12px;
+      }
+
+      nav a {
+        font-size: 11px;
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 65px 6%;
+      }
+
+      .hero h1 {
+        font-size: 43px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .hero-box {
+        width: 280px;
+        height: 280px;
+      }
+
+      .hero-box h2 {
+        font-size: 28px;
+      }
+
+      section {
+        padding: 60px 6%;
+      }
+
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title h2,
+      .about h2,
+      .cta h2 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="logo">
+      CRAFTIO <span>GIFTS</span>
+    </div>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+
+    <div class="hero-text">
+
+      <small>PERSONALIZED • UNIQUE • SPECIAL</small>
+
+      <h1>
+        Gifts Made<br>
+        <span>Just For You.</span>
+      </h1>
+
+      <p>
+        Discover beautiful personalized gifts made especially
+        for birthdays, weddings, couples, friends and special moments.
+      </p>
+
+      <a class="btn"
+         href="https://wa.me/923XXXXXXXXX"
+         target="_blank">
+        Order on WhatsApp
+      </a>
+
+      <a class="btn btn-outline" href="#products">
+        Explore Products
+      </a>
+
+    </div>
+
+    <div class="hero-box">
+
+      <div class="hero-box-inner">
+
+        <h2>CRAFTIO</h2>
+
+        <p>GIFTS • MADE WITH LOVE</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRODUCTS -->
+  <section id="products">
+
+    <div class="section-title">
+
+      <small>OUR COLLECTION</small>
+
+      <h2>What We Create</h2>
+
+    </div>
+
+
+    <div class="products">
+
+
+      <!-- FRAME -->
+      <div class="product">
+
+        <div class="product-image">
+          Add your Frame Photo here
+        </div>
+
+        <div class="product-content">
+
+          <h3>Personalized Frames</h3>
+
+          <p>
+            Beautiful customized frames for birthdays,
+            couples, weddings and special memories.
+          </p>
+
+          <a class="btn"
+             href="https://wa.me/923XXXXXXXXX"
+             target="_blank">
+            Order Now
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- MUG -->
+      <div class="product">
+
+        <div class="product-image">
+          Add your Mug Photo here
+        </div>
+
+        <div class="product-content">
+
+          <h3>Customized Mugs</h3>
+
+          <p>
+            Personalized mugs with names, photos and
+            special designs made just for you.
+          </p>
+
+          <a class="btn"
+             href="https://wa.me/923XXXXXXXXX"
+             target="_blank">
+            Order Now
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- KEYCHAIN -->
+      <div class="product">
+
+        <div class="product-image">
+          Add your Keychain Photo here
+        </div>
+
+        <div class="product-content">
+
+          <h3>Customized Keychains</h3>
+
+          <p>
+            Personalized name and custom keychains,
+            perfect for gifting.
+          </p>
+
+          <a class="btn"
+             href="https://wa.me/923XXXXXXXXX"
+             target="_blank">
+            Order Now
+          </a>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+
+    <div class="about-content">
+
+      <h2>About Craftio Gifts</h2>
+
+      <p>
+        Craftio Gifts is a personalized gifting brand
+        dedicated to turning special memories into beautiful,
+        meaningful gifts.
+
+        From customized frames and mugs to personalized
+        keychains and more, we create gifts made especially
+        for you and your loved ones.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- FEATURES -->
+  <section>
+
+    <div class="section-title">
+
+      <small>WHY CRAFTIO</small>
+
+      <h2>Made For Special Moments</h2>
+
+    </div>
+
+
+    <div class="features">
+
+      <div class="feature">
+
+        <h3>Personalized</h3>
+
+        <p>
+          Every order is customized according
+          to your idea and requirements.
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <h3>Made With Care</h3>
+
+        <p>
+          We focus on creating beautiful gifts
+          that feel personal and meaningful.
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <h3>Perfect For Gifting</h3>
+
+        <p>
+          Birthdays, weddings, couples, friends
+          and every special occasion.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT / CTA -->
+  <section class="cta" id="contact">
+
+    <h2>Have a Gift Idea?</h2>
+
+    <p>
+      Tell us what you have in mind and
+      we'll help turn it into something special.
+    </p>
+
+    <a class="btn"
+       href="https://wa.me/923XXXXXXXXX"
+       target="_blank">
+      Chat With Us on WhatsApp
+    </a>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <h2>
+      CRAFTIO <span>GIFTS</span>
+    </h2>
+
+    <p>
+      Personalized Gifts, Made With Love.
+    </p>
+
+    <div class="footer-links">
+
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+
+    </div>
+
+    <p>
+      Frames • Mugs • Keychains • Custom Gifts
+    </p>
+
+    <p>
+      © 2026 Craftio Gifts. All Rights Reserved.
+    </p>
+
+  </footer>
+
+</body>
+</html>
